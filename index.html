@@ -7,10 +7,20 @@
     <style>
     .plot-container { width: 100%; display: flex; flex-wrap: wrap; justify-content: space-around; }
     .plot-container iframe { width: 47%; min-width: 600px; height: 600px; margin: 24px; }
+    .controls { display: flex; align-items: center; }
     </style>
 </head>
 <body>
+<div class="controls"><span>Width:</span><input id="width-controller" type="range" min="10" max="100" value="47" ></div>
 <div class="plot-container"><iframe src="TIKTOK_TOPIC_EXP_SAD_sadmentalhealth_aa360b43_needsprocessing.html"></iframe>
 <iframe src="TIKTOK_TOPIC_EXP_SAD_sadweather_efe3b1f6_needprocessing.html"></iframe>
 <iframe src="TIKTOK_TOPIC_EXP_SAD_sadpets_62988ffb_needprocessing.html"></iframe>
-<iframe src="TIKTOK_TOPIC_EXP_SAD_sadcats_ab4029c1_needprocessing.html"></iframe></div></body></html>
+<iframe src="TIKTOK_TOPIC_EXP_SAD_sadcats_ab4029c1_needprocessing.html"></iframe></div>
+    <script>
+    document.getElementById("width-controller").addEventListener('input', (e) => {
+        document.querySelectorAll('.plot-container iframe').forEach(x => {
+            x.style.width = e.target.value + '%';
+        })
+    });
+    </script>
+    </body></html>
