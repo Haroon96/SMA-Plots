@@ -1,2 +1,1 @@
 # SMA-Plots
-# SMA-Plots
